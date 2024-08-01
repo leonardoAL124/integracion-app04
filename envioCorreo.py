@@ -2,7 +2,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-from credenciales_correo import usuario_correo, contraseña_correo
+from envioCorreo import usuario_correo, contraseña_correo
 
 def enviar_correo(destinatario, asunto, cuerpo):
     # Servidor SMTP
