@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -67,6 +68,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -76,12 +78,13 @@
   <nav>
     <a href="index.html">Inicio</a>
     <a href="#">Servicios</a>
-    <a href="#">Contacto</a>
+    <a href="contactos.html">Contacto</a>
     <a href="#" onclick="toggleLogin()">Login</a>
   </nav>
 
   <section>
     <h2>Bienvenido a Veterinaria PetCare</h2>
+    <img src="images/ima1.jpg" alt="Mascotas" style="width: 100%; max-width: 800px; margin: 20px auto; display: block;">
 
     <p>Ofrecemos atención de calidad para tus mascotas. ¡Cuida de su salud y bienestar!</p>
 
@@ -113,8 +116,21 @@
       document.getElementById("welcomeMessage").style.display = "none";
     }
 
-   
+    function loginUser() {
+      var enteredUsername = document.getElementById("username").value;
+      var enteredPassword = document.getElementById("password").value;
+
+      // Compara las credenciales con las almacenadas en secrets.js
+      if (enteredUsername === credentials.username && enteredPassword === credentials.password) {
+        document.getElementById("welcomeMessage").style.display = "block";
+        return false;
+      } else {
+        alert("Credenciales incorrectas");
+        return false;
+      }
+    }
   </script>
 
 </body>
+
 </html>
